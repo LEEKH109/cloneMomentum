@@ -7,19 +7,21 @@
 h2 {
   margin: 0px;
   padding: 0px;
+  height: 13vh;
 }
 body {
   font-family: "Baloo Tammudu 2", "Noto Sans KR", sans-serif;
 }
+/* 여기는 로그인 영역 */
 #login-form {
   text-align: center;
   color: white;
-  margin: 0 auto;
+  padding-top: 5vh;
 }
 #login-form input:first-child {
   text-align: center;
   color: white;
-  font-size: 1.3rem;
+  font-size: 2vh;
   padding: 10px;
   width: 240px;
   border-radius: 5px;
@@ -47,7 +49,7 @@ body {
   border: none;
   background-color: rgba(255, 255, 255, 0.6);
   color: rgb(80, 80, 80);
-  font-size: 1rem;
+  font-size: 2vh;
   font-weight: 600;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
   outline: none;
@@ -62,12 +64,14 @@ body {
   color: white;
   outline: none;
 }
+/* 여기는 이름 출력 부분 */
 #greeting {
   text-align: center;
   color: white;
   font-weight: 600;
-  font-size: 4rem;
+  font-size: 10vh;
 }
+/* 배경화면 */
 #backImg {
   position: fixed; /* 엡솔루트 안 씀 */
   left: 0;
@@ -80,23 +84,17 @@ body {
   background-position: center; /* 화면 중앙*/
   background-repeat: no-repeat; /* 이미지가 반복되지 않도록 설정 */
 }
-
+/* 시계 */
 #clock {
-  height: 25vh;
+  height: 20vh;
   text-align: center;
-  font-size: 8rem;
-  margin: 0px;
-  padding: 0px;
+  font-size: 16vh;
   color: white;
 }
-
+/* 명언 부분 */
 #quote {
-  text-align: right;
+  text-align: center;
   width: 100%;
-  top: 30px;
-  right: 30px;
-  bottom: auto;
-  position: fixed;
   font-size: 1.1rem;
   z-index: -1;
   color: rgba(255, 255, 255, 0.6);
