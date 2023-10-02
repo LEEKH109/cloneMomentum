@@ -61,9 +61,8 @@ body {
   margin: 0 auto;
   text-align: center;
   color: white;
-  font-weight: 400;
-  font-size: 2rem;
   font-weight: 600;
+  font-size: 4rem;
 }
 #backImg {
   position: fixed; /* 엡솔루트 안 씀 */
@@ -76,4 +75,25 @@ body {
   background-size: cover; /*화면에 맞게 크기 조정 */
   background-position: center; /* 화면 중앙*/
   background-repeat: no-repeat; /* 이미지가 반복되지 않도록 설정 */
+}
+
+#clock {
+  background-color: black;
+  text-align: center;
+  font-size: 8rem;
+  margin: 10px;
+  color: white;
+  padding: -100px;
+}
+
+#quote {
+  text-align: center;
+  width: 100%;
+  margin-left: 36px;
+  font-family: Archivo;
+  font-size: 2rem;
+  font-weight: 200;
+  color: white;
+  position: fixed;
+  bottom: 20px;
 }

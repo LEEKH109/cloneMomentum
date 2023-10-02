@@ -7,6 +7,7 @@
     <title>Momentum App</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;500&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@1,100&family=Baloo+Tammudu+2:wght@400;500&family=Frank+Ruhl+Libre:wght@300&display=swap");
     </style>
   </head>
   <body>
@@ -21,6 +22,12 @@
     </form>
     <h1 id="greeting" class="hidden"></h1>
     <h2 id="clock">00:00:00</h2>
+    <form id="todo-form">
+      <input type="text" placeholder="Write a To Do and Press Enter" required />
+    </form>
+    <ul id="todo-list">
+      <!--Javascript로 사용자 리스트 추가-->
+    </ul>
     <div id="quote">
       <span></span>
       <span></span>
@@ -29,5 +36,6 @@
     <script src="./js/clock.js"></script>
     <script src="./js/quotes.js"></script>
     <script src="./js/background.js"></script>
+    <script src="./js/todo.js"></script>
   </body>
 </html>
