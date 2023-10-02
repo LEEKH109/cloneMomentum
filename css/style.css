@@ -73,7 +73,7 @@ body {
   top: 0;
   width: 100%; /*화면 꽉 채움 */
   height: 100%;
-  z-index: -1;
+  z-index: -3;
   filter: brightness(60%);
   background-size: cover; /*화면에 맞게 크기 조정 */
   background-position: center; /* 화면 중앙*/
@@ -97,6 +97,7 @@ body {
   bottom: auto;
   position: fixed;
   font-size: 1.1rem;
+  z-index: -1;
   color: rgba(255, 255, 255, 0.6);
 }
 
