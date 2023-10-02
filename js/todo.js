@@ -18,6 +18,7 @@ function deleteCheckedItem(event) {
 }
 
 function spanToInput(event) {
+  //생성된 li에서 span => input, 처리는 toggleedit에서
   const span = event.target;
   if (span.tagName !== "SPAN") return;
   const li = span.parentElement;
@@ -26,15 +27,20 @@ function spanToInput(event) {
 }
 
 function inputToSpan(event) {
+  //생성된 li에서 span => input, 처리는 toggleedit에서
   if (event.key === "Enter" || event.type === "click") {
+    //엔터키 감지, 클릭 감지
     const li = event.target.parentElement;
     const input = li.querySelector("input[type='text']");
+    //밑은 span 다시 만드는 과정
     const span = document.createElement("span");
     span.innerText = input.value;
     span.addEventListener("click", spanToInput);
     li.replaceChild(span, input);
+    //Node.replaceChild(a,b) => b를 a로 교체 부모노드에서 자식노드 b를 a로 교체
     toDos.find((toDo) => toDo.id === parseInt(li.id)).text = input.value;
     saveToDos();
+    //교체과정
     li.querySelector("button").innerText = "Edit";
   }
 }
@@ -42,9 +48,10 @@ function inputToSpan(event) {
 function toggleEditMode(event) {
   const li = event.target.parentElement;
   const span = li.querySelector("span");
-  const input = li.querySelector("input[type='text']");
+  const input = li.querySelector("input[type='text']"); //타입인 text인 input만
 
   if (input) {
+    //태그 속성으로 구분
     const newSpan = document.createElement("span");
     newSpan.innerText = input.value;
     newSpan.addEventListener("click", spanToInput);
