@@ -13,19 +13,57 @@ function deleteToDo(event) {
   toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
   saveToDos();
 }
+function deleteCheckedItem(event) {
+  if (event.target.checked) {
+    const li = event.target.parentElement;
+    li.remove();
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+    saveToDos();
+  }
+}
+
+function toggleEditMode(event) {
+  const li = event.target.parentElement;
+  const span = li.querySelector("span");
+  const text = span.innerText;
+
+  const input = document.createElement("input");
+  input.type = "text";
+  input.value = text;
+
+  input.addEventListener("blur", function () {
+    span.innerText = input.value;
+    const toDoObj = toDos.find((toDo) => toDo.id === parseInt(li.id));
+    toDoObj.text = input.value;
+    saveToDos();
+
+    li.replaceChild(span, input);
+  });
+
+  li.replaceChild(input, span);
+  input.focus();
+}
 
 function paintToDo(newTodo) {
   const li = document.createElement("li");
   li.id = newTodo.id;
   const span = document.createElement("span");
   span.innerText = newTodo.text;
-  const button = document.createElement("button");
-  button.innerText = "❌";
-  button.addEventListener("click", deleteToDo);
+
+  const checkBox = document.createElement("input");
+  checkBox.type = "checkbox";
+  checkBox.addEventListener("change", deleteCheckedItem);
+
+  const editButton = document.createElement("button");
+  editButton.innerText = "Edit";
+  editButton.addEventListener("click", toggleEditMode);
+
+  li.appendChild(checkBox);
   li.appendChild(span);
-  li.appendChild(button);
+  li.appendChild(editButton);
   toDoList.appendChild(li);
 }
+
 function handleToDoSubmit(event) {
   event.preventDefault();
   const newTodo = toDoInput.value;

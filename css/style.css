@@ -4,6 +4,10 @@
 * {
   box-sizing: border-box;
 }
+h2 {
+  margin: 0px;
+  padding: 0px;
+}
 body {
   font-family: "Baloo Tammudu 2", "Noto Sans KR", sans-serif;
 }
@@ -58,7 +62,6 @@ body {
   outline: none;
 }
 #greeting {
-  margin: 0 auto;
   text-align: center;
   color: white;
   font-weight: 600;
@@ -78,22 +81,106 @@ body {
 }
 
 #clock {
-  background-color: black;
+  height: 25vh;
   text-align: center;
   font-size: 8rem;
-  margin: 10px;
+  margin: 0px;
+  padding: 0px;
   color: white;
-  padding: -100px;
 }
 
 #quote {
-  text-align: center;
+  text-align: right;
   width: 100%;
-  margin-left: 36px;
-  font-family: Archivo;
-  font-size: 2rem;
-  font-weight: 200;
-  color: white;
+  top: 10px;
+  right: 30px;
+  bottom: auto;
   position: fixed;
-  bottom: 20px;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* 투두는 길어서 따로 빼기 */
+#todo-form {
+  margin: 20px auto;
+  text-align: center;
+  width: 80%;
+}
+
+#todo-form input {
+  padding: 10px;
+  font-size: 1.2rem;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 100%;
+  outline: none;
+  transition: all 0.4s;
+}
+
+#todo-form input:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+#todo-form input:focus {
+  background-color: rgba(0, 0, 0, 0);
+  border-bottom: 1px solid white;
+}
+
+#todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  width: 80%;
+}
+
+#todo-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-bottom: 10px;
+  border-radius: 5px;
+  color: white;
+}
+
+#todo-list li:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+#todo-list input[type="checkbox"] {
+  margin-right: 15px;
+}
+
+#todo-list button {
+  background-color: rgba(255, 255, 255, 0.6);
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+#todo-list button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+/* 여기는 수정 부분 input */
+#todo-list input[type="text"] {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
+  font-size: 1.2rem;
+  outline: none;
+  width: 70%;
+  transition: all 0.4s;
+}
+
+#todo-list input[type="text"]:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#todo-list input[type="text"]:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
